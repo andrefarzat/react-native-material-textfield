@@ -95,10 +95,6 @@ export default class Label extends PureComponent {
       ...props
     } = this.props;
 
-    if (style.color) {
-      baseColor = style.color;
-    }
-
     let color = restricted?
       errorColor:
       focus.interpolate({

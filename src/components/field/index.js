@@ -70,6 +70,7 @@ export default class TextField extends PureComponent {
     tintColor: PropTypes.string,
     textColor: PropTypes.string,
     baseColor: PropTypes.string,
+    labelBaseColor: PropTypes.string,
 
     label: PropTypes.string.isRequired,
     title: PropTypes.string,
@@ -301,6 +302,7 @@ export default class TextField extends PureComponent {
       baseColor,
       animationDuration,
       affixTextStyle,
+      labelBaseColor,
     } = this.props;
 
     if (null == affix) {
@@ -314,6 +316,7 @@ export default class TextField extends PureComponent {
       fontSize,
       baseColor,
       animationDuration,
+      labelBaseColor,
     };
 
     return (
@@ -352,6 +355,7 @@ export default class TextField extends PureComponent {
       containerStyle,
       inputContainerStyle: inputContainerStyleOverrides,
       clearTextOnFocus,
+      labelBaseColor,
       ...props
     } = this.props;
 
@@ -487,7 +491,7 @@ export default class TextField extends PureComponent {
       fontSize,
       activeFontSize: labelFontSize,
       tintColor,
-      baseColor,
+      baseColor: labelBaseColor || baseColor,
       errorColor,
       animationDuration,
       active,
