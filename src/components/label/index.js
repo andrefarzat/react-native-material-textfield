@@ -89,11 +89,15 @@ export default class Label extends PureComponent {
       basePadding,
       style,
       errored,
-      active, 
+      active,
       focused,
       animationDuration,
       ...props
     } = this.props;
+
+    if (style.color) {
+      baseColor = style.color;
+    }
 
     let color = restricted?
       errorColor:
